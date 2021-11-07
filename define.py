@@ -5,7 +5,7 @@ from qiskit.visualization import plot_bloch_vector
 
 #用量子态a|0>+b|1>中的a和b计算出cos(theta)|0>+e^i(phi)*sin(theta)|1>形式的theta和phi
 def ab2sph(a, b):
-    theta = 2 * cmath.acos(a)
+    theta = 2 * cmath.acos(a)  #cos的反函数
     phi = cmath.log(sys.float_info.min+b/(sys.float_info.min+cmath.sin(theta/2)))/1j  #为了让除数不为0，还有让ln x的x不为0，添加了sys.float_info.min，即最小浮点数
     print("theta, phi:")
     print(theta.real, phi.real)
